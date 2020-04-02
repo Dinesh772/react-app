@@ -1,0 +1,59 @@
+* Create a class Component CountriesDashboardApp
+  -State variables
+        -countries
+        -selectedTheme
+  
+  -Methods
+        -componentDidMount
+        -filterCountriesByRegion
+        -filterCOuntriesByName
+        -onChangeTheme
+   
+   
+* Create a class Component named Header which has the following methods and props
+  -Methods
+        -onChangeTheme
+  -props
+        -onChangeTheme
+        -selectedTheme
+        
+        
+* create a class Component named CountriesFilterBar which will render searchCountry SelectedRegion components
+
+*countriesFilterBar component will receive the following props.
+    -props
+        -filterCountriesByRegion
+        -filterCOuntriesByName
+        
+        
+*create a class component named searchCountry which has the following methods,props, and state variables
+    -Methods
+        -onChangeSearchText
+        -onSubmitSearchText
+           (will trigger the callback function filterCOuntriesByName with searchText as argument)
+    -State variables
+        -searchText
+    -props
+        filterCOuntriesByName
+        
+        
+*create a class component named SelectedRegion which has the following methods props and state variables
+    -Methods
+        -onChangeSelectedRegion
+    -state variables
+        -SelectedRegion
+    -props
+        -filterCountriesByRegion
+        
+        
+*create a class component named Countries which has the following methods and props
+    -Methods
+        -renderCountries
+    -props
+        -countries
+
+*create a component named CountryCard which has the following props
+    -props
+        -countryDetails
+
+*Render CountriesDashboardApp on /Country-dashboard-app route in frontend.
