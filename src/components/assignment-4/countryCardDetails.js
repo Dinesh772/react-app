@@ -1,6 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router';
 import {IoMdArrowRoundBack} from 'react-icons/io';
+import Loader from 'react-loader-spinner'
 class CardDetails extends React.Component{
     state={
      light: {
@@ -15,33 +16,33 @@ class CardDetails extends React.Component{
      },
      countriesList:[],
     }
-      componentDidMount=()=>{
-      fetch('https://restcountries.eu/rest/v2/all').then(response=>response.json()).then(data=>this.setState(state=>({
+    getCountriesList=()=>{
+        fetch('https://restcountries.eu/rest/v2/all').then(response=>response.json()).then(data=>this.setState(state=>({
           countriesList:data,
-          
       })));
+    }
+    componentDidMount(){
+    this.getCountriesList()
     }
     navigateBack=()=>{
         const {history}=this.props;
         history.goBack();
     }
-    borderCountry=(event)=>{
-        const value=event.target.innerHTML;
-        const countriesList=this.state.countriesList
-        //this.props.location.state.countriesList;
-        const border=countriesList.filter(el=>(el.alpha3Code===value));
-        const data={
-            countriesList:countriesList,
-            country:border[0],
-        };
+   
+    borderCountry=(event,country)=>{
+        const value=event.target.value;
+       
         let {history}=this.props;
-        history.push('./countryCardDetails',data);
+    history.push(`/countries-dashboard-app/${value}`,value);;
     }
     render(){
-        const country=this.props.location.state.country
-        const languages=country.languages.map(el=>el.name);
-        const currencies=country.currencies.map(el=>el.name);
-        const borders=country.borders.map((el=><button  className="border-buttons" onClick={this.borderCountry} key={el}>{el}</button>));
+        const countryCode=this.props.location.pathname.slice(-3);
+        const selectedCountry=this.state.countriesList.filter(country=>(country.alpha3Code.toLowerCase()===countryCode.toLowerCase()))
+        const country=selectedCountry[0]
+        if(country!==undefined){
+            const languages=country.languages.map(el=>el.name);
+            const currencies=country.currencies.map(el=>el.name);
+            const borders=country.borders.map((alpha3Code=><button type="button" value={alpha3Code} className="border-buttons" onClick={this.borderCountry} key={alpha3Code}>{alpha3Code}</button>));
         return(
             <div style={{backgroundColor:this.state[this.props.theme].name,color:this.state[this.props.theme].color}} className="country-full-details">
             <button className="back-btn" onClick={this.navigateBack}><IoMdArrowRoundBack /> Back</button><br/>
@@ -70,7 +71,12 @@ class CardDetails extends React.Component{
                     </div>
                 </div>
             </div>
-            );
+            //<div>ganesh</div>
+            
+            );}
+            else{
+                return(<Loader type="ThreeDots" color="blue" height={100} width={100} />);
+            }
     }
 }
 export default withRouter(CardDetails);

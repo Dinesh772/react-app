@@ -3,7 +3,7 @@ body{
 }
 .countries-header{
     display:flex;
-    width:95%;
+    width:100%;
     justify-content:space-between;
     padding:30px;
     box-shadow: 1px 1px 1px #999; 
