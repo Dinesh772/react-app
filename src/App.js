@@ -11,10 +11,11 @@ import {TodoList} from './components/todo-list/index';
 import {FormComponents} from './components/assignment-3/index';
 //import './components/assignment-3/index.css';
 import CountriesDashboardApp from './components/assignment-4/Countries-dashboard-app'
-import './components/assignment-4/Countries.css';
+//import './components/assignment-4/Countries.css';
 import CardDetails from './components/assignment-4/CountryCardDetails';   
-import Header from './components/assignment-4/Countries-header';
+//import Header from './components/assignment-4/Countries-header';
 import Home from './components/home.js'
+import {EmojisGame} from "./components/assignment-5/EmojisGame";
 class App extends React.Component{
   state={
     changeTheme:'light',
@@ -43,13 +44,17 @@ class App extends React.Component{
         <Route path="/todoList">
         <TodoList />
         </Route>
+        <Route path="/emojis-game">
+        <EmojisGame />
+        </Route>
         <Route path='/:id'>
-        <Header theme={this.state.changeTheme} change={this.theme}/>
         <CardDetails   theme={this.state.changeTheme} change={this.theme} />
         </Route>
+        
         <Route path="/">
         <Home />  
         </Route>
+
         </Switch>
     </Router>
   );
@@ -57,7 +62,7 @@ class App extends React.Component{
 }
 export {App}
 
-
+//<Header theme={this.state.changeTheme} change={this.theme}/>
 
 
 

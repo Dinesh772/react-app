@@ -5,6 +5,26 @@ import {CountriesFilterBar} from './Countries-filter-bar';
 import {Countries} from './Countries';
 import {withRouter} from 'react-router-dom';
 import {GetCountries} from './GetCountries'
+import Loader from 'react-loader-spinner';
+import styled from '@emotion/styled'
+const Wrapper=styled.div`
+display:flex;
+    flex-direction:column;
+    width:100%;
+    color:black;
+    background-color:#f2f2f2;
+    transition:all 0.3s linear;
+`
+const LoadingWrapper=styled.div`
+min-height:100vh;
+`
+const Loading=styled.div`
+display:flex;
+justify-content:center;
+align-items:flex-start;
+padding-top:200px;
+height:100%;
+`
 class CountriesDashboardApp extends React.Component{
     state={
         countries:[],
@@ -75,14 +95,33 @@ class CountriesDashboardApp extends React.Component{
         
     }
     render(){
-        return(
-            <div className={'countries-dashboard'} style={{backgroundColor:this.state[this.props.theme].name,color:this.state[this.props.theme].color}}>
-            <GetCountries country={this.getCountries}/>
-            <Header   theme={this.props.theme} change={this.props.change}  />
-            <CountriesFilterBar searchByName={this.filterCountriesByName} searchByRegion={this.filterCountriesByRegion}/>
-            <Countries countriesList={this.state.filteredList} selectedCountry={this.selectedCountry}/>
-            </div>
-            );
+        if(this.state.filteredList.length!==0){
+            return(
+                <Wrapper style={{backgroundColor:this.state[this.props.theme].name,color:this.state[this.props.theme].color}}>
+                <GetCountries country={this.getCountries}/>
+                <Header   theme={this.props.theme} change={this.props.change}  />
+                <CountriesFilterBar searchByName={this.filterCountriesByName} searchByRegion={this.filterCountriesByRegion}/>
+                <Countries countriesList={this.state.filteredList} selectedCountry={this.selectedCountry}/>
+                </Wrapper>
+                );
+            }
+            else{
+                return(
+                <LoadingWrapper style={{backgroundColor:this.state[this.props.theme].name,color:this.state[this.props.theme].color}}>
+                 <Header   theme={this.props.theme} change={this.props.change}  />
+                 <CountriesFilterBar searchByName={this.filterCountriesByName} searchByRegion={this.filterCountriesByRegion}/>
+                 <Loading>
+                 <Loader type="ThreeDots"  color="green" height={100} width={100}/>
+                 </Loading>
+                 </LoadingWrapper>
+               );
+            }
     }
 }
 export default withRouter(CountriesDashboardApp);
+
+
+// <LoadingWrapper>
+// <Loader type="ThreeDots"  color="green" height={100} width={100}/>
+// ganesh
+// </LoadingWrapper>

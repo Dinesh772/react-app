@@ -1,6 +1,27 @@
 import React from 'react';
 import {FiMoon} from 'react-icons/fi';
 import {withRouter} from 'react-router-dom';
+import styled from '@emotion/styled'
+
+const Wrapper=styled.div`
+display:flex;
+width:100%;
+justify-content:space-between;
+padding:30px;
+box-shadow: 1px 1px 1px #999; 
+transition:all 0.3s linear;
+`
+const H1=styled.h1`
+font-size:24px;
+font-weight:bold;
+`
+const Button=styled.button`
+    border:none;
+    display:flex;
+    font-size:18px;
+    color:inherit;
+    height:30px;
+`
 class Header extends React.Component{
     state={
         light: {
@@ -40,10 +61,10 @@ class Header extends React.Component{
     }
     render(){
         return(
-            <div className="countries-header" style={{backgroundColor:this.state[this.props.theme].name,color:this.state[this.props.theme].color}}>
-            <h2>Where in the world?</h2> 
-            <button className="theme-btn" onClick={this.handleClick}><FiMoon size={20}/>{this.state.buttonStatus}</button>
-            </div>
+            <Wrapper style={{backgroundColor:this.state[this.props.theme].name,color:this.state[this.props.theme].color}}>
+            <H1>Where in the world?</H1> 
+            <Button onClick={this.handleClick}><FiMoon size={20}/>{this.state.buttonStatus}</Button>
+            </Wrapper>
             );
     }
 }

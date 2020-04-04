@@ -17,6 +17,9 @@ export default function Home(){
             <li>
               <Link to="/todoList">Todolist</Link>
             </li>
+            <li>
+              <Link to="/emojis-game">Emojis Game</Link>
+            </li>
           </ul>      
         </nav>
         </div>
