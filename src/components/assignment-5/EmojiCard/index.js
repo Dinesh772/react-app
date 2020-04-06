@@ -1,4 +1,5 @@
 import React from "react";
+import {CardWrapper,Image} from './StyledComponents.js'
 class EmojiCard extends React.Component{
     
     handleClick=()=>{
@@ -8,14 +9,14 @@ class EmojiCard extends React.Component{
     render(){
         const {theme,name,image}=this.props
     return (
-        <div className={"rounded-sm my-10 mx-5 w-64 h-64 shadow-custom " +(theme === "light" ? "bg-white" : "bg-blue-700 text-white")}
-        onClick={this.handleClick}>
-        <div className="h-48 m-auto w-4/5">
+        <CardWrapper theme={theme} onClick={this.handleClick} >
+        <Image >
             <img alt={name} src={image} />
-        </div>
+        </Image>
         <p className="text-center">{name}</p>
-        </div>
+        </CardWrapper>
     );
     }
 }
 export default EmojiCard;
+//className={"rounded-sm my-10 mx-5 w-64 h-64 shadow-custom " +(theme === "light" ? "bg-white" : "bg-blue-700 text-white")}

@@ -1,9 +1,9 @@
 import React from 'react'
-import Header from './Header';
-import {Wrapper,Child} from './Styles'
-import EmojiCard from './EmojiCard';
-import HowToPlay from './HowToPlay'
-import WinOrLoose from './WinOrLoose'
+import Header from '../Header/index.js';
+import {Wrapper,Child} from './StyledComponents'
+import EmojiCard from '../EmojiCard/index';
+import HowToPlay from '../HowToPlay/index'
+import WinOrLoose from '../WinOrLoose/index'
 class EmojisGame extends React.Component{
     state={
         score:0,
@@ -11,7 +11,7 @@ class EmojisGame extends React.Component{
         gameStatus:'Playing',
         theme:'light',
         emojiData:[],
-        triggredEmojisList:[]
+        triggredEmojisList:[] 
     }
     getData=()=>{
         const emojiData=[
@@ -68,7 +68,6 @@ class EmojisGame extends React.Component{
     }
     onEmojiClick=(id)=>{
         const triggredEmojisList=this.state.triggredEmojisList
-        console.log(id,triggredEmojisList.length)
         if(!triggredEmojisList.includes(id) && triggredEmojisList.length!==11){
         triggredEmojisList.push(id);
         const emojisData=this.shuffleEmojis()

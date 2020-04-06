@@ -1,5 +1,5 @@
 import React from "react";
-import {Header,H1,Nav} from './Styles'
+import {Header,H1,Nav,P,Button} from './StyledComponents'
 function Navbar(props) {
   const text = props.theme === "light" ? "Dark" : "Light";
   return (
@@ -7,17 +7,17 @@ function Navbar(props) {
       <div className="flex  ">
         <H1>Emoji Game</H1>
         <Nav>
-          <div className=" flex flex-wrap items-center">
-            <p className="font-bold mx-3">
+          <div className=" flex flex-wrap items-center  sm:flex sm:justify-center ">
+            <P>
               Score: <span className="text-xl">{props.currentScore}</span>
-            </p>
-            <p className="font-bold mx-3">
+            </P>
+            <P>
               Top Score: <span className="text-xl">{props.highScore}</span>
-            </p>
+            </P>
           </div>
-          <button onClick={props.onChangeTheme} className={"border border-solid p-2 ml-3 focus:outline-none cursor-default " +(props.theme === "dark" ? "border-white" : "border-black")}>
+          <Button theme={props.theme} onClick={props.onChangeTheme}>
             {text.toUpperCase()} THEME
-          </button>
+          </Button>
         </Nav>
       </div>
     </Header>
