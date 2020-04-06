@@ -15,7 +15,7 @@ import CountriesDashboardApp from './components/assignment-4/Countries-dashboard
 import CardDetails from './components/assignment-4/CountryCardDetails';   
 //import Header from './components/assignment-4/Countries-header';
 import Home from './components/home.js'
-import {EmojisGame} from "./components/assignment-5/EmojisGame";
+import {EmojisGame} from "./components/assignment-5/EmojisGame/index.js";
 class App extends React.Component{
   state={
     changeTheme:'light',
