@@ -47,13 +47,16 @@ class App extends React.Component{
         <Route path="/emojis-game">
         <EmojisGame />
         </Route>
-        <Route path='/:id'>
+         <Route exact path='/:id'>
         <CardDetails   theme={this.state.changeTheme} change={this.theme} />
         </Route>
+
         
         <Route path="/">
         <Home />  
         </Route>
+        
+ 
 
         </Switch>
     </Router>
@@ -63,8 +66,6 @@ class App extends React.Component{
 export {App}
 
 //<Header theme={this.state.changeTheme} change={this.theme}/>
-
-
 
 
 
