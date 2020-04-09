@@ -66,10 +66,13 @@ class App extends React.Component{
         <Route path='/:id'>
         <CardDetails   theme={this.getCurrentTheme()} change={this.theme} />
         </Route>
+
         
         <Route path="/">
         <Home />  
         </Route>
+        
+ 
 
         </Switch>
     </Router>
