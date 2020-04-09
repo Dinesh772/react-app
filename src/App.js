@@ -16,39 +16,55 @@ import CardDetails from './components/assignment-4/CountryCardDetails';
 //import Header from './components/assignment-4/Countries-header';
 import Home from './components/home.js'
 import {EmojisGame} from "./components/assignment-5/EmojisGame/index.js";
+//import CounterPage from './components/CounterPage/index'
+//import { observable } from "mobx";
+import { observer } from "mobx-react";
+import themeStore from "./stores/ThemeStore";
+import { TodoApp } from "./components/assignment-7/TodoApp";
+//import { configure } from "mobx";
+
+//configure {{enforceActions:true}}
+@observer
 class App extends React.Component{
-  state={
-    changeTheme:'light',
+  //@observable changeTheme='light'
+  getCurrentTheme=()=>{
+    return themeStore.changeTheme
+  }
+  setCurrentTheme=(theme)=>{
+    themeStore.setCurrentTheme(theme)
   }
   theme=(event)=>{
-    if(this.state.changeTheme==='light'){
-      this.setState({
-        changeTheme:'dark',
-      })
+
+    if(this.getCurrentTheme()==='light'){
+      this.setCurrentTheme('dark')
     }else{
-      this.setState({
-        changeTheme:'light',
-      })
+      this.setCurrentTheme('light')
     }
   }
   render(){
   return (
     <Router>
         <Switch>
+        {/* <Route path="/counter-page">
+        <CounterPage />
+        </Route> */}
         <Route path="/forms">
         <FormComponents />
         </Route>
         <Route exact path="/countries-dashboard-app">   
-        <CountriesDashboardApp  theme={this.state.changeTheme} change={this.theme} />
+        <CountriesDashboardApp  theme={this.getCurrentTheme()} change={this.theme} />
         </Route>
         <Route path="/todoList">
         <TodoList />
+        </Route>
+        <Route path="/mobx-todoList">
+        <TodoApp />
         </Route>
         <Route path="/emojis-game">
         <EmojisGame />
         </Route>
         <Route path='/:id'>
-        <CardDetails   theme={this.state.changeTheme} change={this.theme} />
+        <CardDetails   theme={this.getCurrentTheme()} change={this.theme} />
         </Route>
         
         <Route path="/">
@@ -61,63 +77,3 @@ class App extends React.Component{
   }
 }
 export {App}
-
-//<Header theme={this.state.changeTheme} change={this.theme}/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-// import HomePage from "./components/HomePage";
-// import Page1 from "./components/Page1";
-
-// import "./App.css";
-
-// const App = () => {
-//   return (
-//     <Router basename={process.env.PUBLIC_URL}>
-//       <Switch>
-//         <Route exact path="/page-1">
-//           <Page1 />
-//         </Route>
-//         <Route path="/">
-//           <HomePage />
-//         </Route>
-//       </Switch>
-//     </Router>
-//   );
-// };
-
-// export default App;

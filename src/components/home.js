@@ -20,6 +20,9 @@ export default function Home(){
             <li>
               <Link to="/emojis-game">Emojis Game</Link>
             </li>
+            <li>
+              <Link to="/mobx-todoList">MobX Todolist App</Link>
+            </li>
           </ul>      
         </nav>
         </div>

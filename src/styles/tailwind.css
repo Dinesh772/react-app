@@ -6841,6 +6841,10 @@ video {
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
+.shadow-todos {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
+}
+
 .hover\:shadow-xs:hover {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
@@ -6885,6 +6889,10 @@ video {
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
+.hover\:shadow-todos:hover {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
+}
+
 .focus\:shadow-xs:focus {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
@@ -6927,6 +6935,10 @@ video {
 
 .focus\:shadow-custom:focus {
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+
+.focus\:shadow-todos:focus {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
 }
 
 .fill-current {
@@ -17174,6 +17186,10 @@ code {
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   }
 
+  .sm\:shadow-todos {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  }
+
   .sm\:hover\:shadow-xs:hover {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -17218,6 +17234,10 @@ code {
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   }
 
+  .sm\:hover\:shadow-todos:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  }
+
   .sm\:focus\:shadow-xs:focus {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -17260,6 +17280,10 @@ code {
 
   .sm\:focus\:shadow-custom:focus {
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+  }
+
+  .sm\:focus\:shadow-todos:focus {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
   }
 
   .sm\:fill-current {
@@ -27494,6 +27518,10 @@ code {
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   }
 
+  .md\:shadow-todos {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  }
+
   .md\:hover\:shadow-xs:hover {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -27538,6 +27566,10 @@ code {
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   }
 
+  .md\:hover\:shadow-todos:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  }
+
   .md\:focus\:shadow-xs:focus {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -27580,6 +27612,10 @@ code {
 
   .md\:focus\:shadow-custom:focus {
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+  }
+
+  .md\:focus\:shadow-todos:focus {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
   }
 
   .md\:fill-current {
@@ -37814,6 +37850,10 @@ code {
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   }
 
+  .lg\:shadow-todos {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  }
+
   .lg\:hover\:shadow-xs:hover {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -37858,6 +37898,10 @@ code {
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   }
 
+  .lg\:hover\:shadow-todos:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  }
+
   .lg\:focus\:shadow-xs:focus {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -37900,6 +37944,10 @@ code {
 
   .lg\:focus\:shadow-custom:focus {
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+  }
+
+  .lg\:focus\:shadow-todos:focus {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
   }
 
   .lg\:fill-current {
@@ -48134,6 +48182,10 @@ code {
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   }
 
+  .xl\:shadow-todos {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  }
+
   .xl\:hover\:shadow-xs:hover {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -48178,6 +48230,10 @@ code {
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   }
 
+  .xl\:hover\:shadow-todos:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  }
+
   .xl\:focus\:shadow-xs:focus {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -48220,6 +48276,10 @@ code {
 
   .xl\:focus\:shadow-custom:focus {
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+  }
+
+  .xl\:focus\:shadow-todos:focus {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0, 15),0 10px 0 -5px #eee,0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,  0 20px 1px -9px rgba(0, 0, 0, 0.15);
   }
 
   .xl\:fill-current {
