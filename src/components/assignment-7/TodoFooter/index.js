@@ -19,6 +19,7 @@ class TodoFooter extends React.Component{
     render(){
         const list=toJS(todoList.List).filter(todo=>todo.isChecked===false)
         const count=list.length
+        
         if(toJS(todoList.List.length)!==0){
         return(
             <div className={`flex w-2/6  justify-between bg-white py-4 mt-1 shadow-todos p-1`}>

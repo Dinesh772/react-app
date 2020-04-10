@@ -1,11 +1,15 @@
 /* eslint-disable array-callback-return */
 //import React from 'react'
-import { observable, action, toJS } from 'mobx'
+import { observable, action, toJS,reaction } from 'mobx'
 
 
 class TodoList {
 @observable List=[]
 @observable selectedFilteredList=[]
+
+
+
+reaction1=reaction(()=>toJS(this.List).map(obj=>obj.id),(id)=>console.log('id===>',id))
 @action.bound
 onAddTodo=(item,id,status)=>{
     const todo={
@@ -50,7 +54,10 @@ onCheckBoxChecked=(value,id)=>{
    
     this.List=updatedList
     this.selectedFilteredList=updatedList
+    
 }
+
+
 @action.bound
 onRemoveClicked=(id)=>{
     const list=toJS(this.List)
@@ -82,5 +89,6 @@ const filteredList=list.filter(todo=>{if(todo.isChecked!==true){return todo}})
 this.List=filteredList
 this.selectedFilteredList=filteredList
 }
+
 }
 export {TodoList}

@@ -21,6 +21,7 @@ import {EmojisGame} from "./components/assignment-5/EmojisGame/index.js";
 import { observer } from "mobx-react";
 import themeStore from "./stores/ThemeStore";
 import { TodoApp } from "./components/assignment-7/TodoApp";
+import { EventsApp } from "./components/Event/EventsApp";
 //import { configure } from "mobx";
 
 //configure {{enforceActions:true}}
@@ -62,6 +63,9 @@ class App extends React.Component{
         </Route>
         <Route path="/emojis-game">
         <EmojisGame />
+        </Route>
+        <Route path="/events-app">
+        <EventsApp />
         </Route>
         <Route path='/:id'>
         <CardDetails   theme={this.getCurrentTheme()} change={this.theme} />

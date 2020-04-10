@@ -15,7 +15,7 @@ handleChange=(event)=>{
     render(){
         return(
             <div className={`border-none w-2/6`}>
-                <input className={`w-full text-2xl italic shadow-lg p-1`}  type="text" placeholder="   What needs to be done?" onKeyDown={this.handleChange} />
+                <input className={`w-full text-2xl italic shadow-lg p-1`}  type="text" placeholder=" What needs to be done?" onKeyDown={this.handleChange} />
             </div>
         )
     }

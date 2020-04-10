@@ -23,8 +23,12 @@ export default function Home(){
             <li>
               <Link to="/mobx-todoList">MobX Todolist App</Link>
             </li>
+            <li>
+              <Link to="/events-app">Events App</Link>
+            </li>
           </ul>      
         </nav>
         </div>
         )
 }
+//events-app

@@ -3,8 +3,6 @@ import stores from '../../../stores'
 
 const todoList=stores.todoList
 class Todo extends React.Component{
-   
-
     handleChange=(event,id)=>{
         const value=event.target.value
             todoList.onUpdateTodo(value,id)
