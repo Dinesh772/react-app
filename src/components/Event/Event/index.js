@@ -27,7 +27,7 @@ class Event extends React.Component{
         const eventList=this.props.eventList
         console.log('===>',eventList)
         const events=eventList.map(Event=>(
-            <EventWrapper>
+            <EventWrapper key={Event.id}>
                 <InputWrapper>
                 <Input type='text' defaultValue={Event.name} onChange={(event)=>this.handleEventChange(event,Event.id)} disabled={!Event.edited}/>
                 <Input type='text' defaultValue={Event.location} onChange={(event)=>this.handleLocationChange(event,Event.id)} disabled={!Event.edited}/>
@@ -41,6 +41,7 @@ class Event extends React.Component{
                 </UpdateButton>
             </EventWrapper>
         ))
+        console.log('events-->',events)
         return(
         <div>{events}</div>
         )

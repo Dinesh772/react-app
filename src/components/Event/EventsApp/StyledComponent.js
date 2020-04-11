@@ -6,4 +6,7 @@ ${tw`flex flex-col items-center mt-3`}
 const EventsCount=styled.div`
 ${props=>props.hide!==true?tw`hidden`:tw`text-xl`}
 `
-export{Wrapper,EventsCount}
+const WarningMsg=styled.div`
+${props=>props.hide===true?tw`hidden`:tw`text-xl pt-24`}
+`
+export{Wrapper,EventsCount,WarningMsg}

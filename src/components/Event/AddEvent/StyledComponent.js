@@ -8,5 +8,5 @@ const Input=styled.input`
 ${tw`border-orange-300 border m-2 w-64`}
 `
 
-const Button=styled.button`${tw`border border-blue-200 h-6 text-sm mt-8  bg-indigo-500  text-white`}`
+const Button=styled.input`${tw`border border-blue-200 h-6 text-sm mt-8  bg-indigo-500 cursor-pointer text-white`}`
 export{Wrapper,Input,Button}

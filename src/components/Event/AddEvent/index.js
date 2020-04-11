@@ -36,7 +36,7 @@ handleSubmit=()=>{
                     <Input type='text' placeholder="Enter Event Name" defaultValue={this.eventName} onChange={this.handleChangeEventName}/>
                     <Input type='text' placeholder="Enter Location" defaultValue={this.location} onChange={this.handleChangeEventLocation}  />
                 </div>
-                <Button type="reset" onClick={this.handleSubmit}>Add Event</Button>
+                <Button type="reset" onClick={this.handleSubmit} value={'Add Event'}/>
             </Wrapper>
             </form>
         )
