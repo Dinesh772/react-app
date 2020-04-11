@@ -18,14 +18,14 @@ import Home from './components/home.js'
 import {EmojisGame} from "./components/assignment-5/EmojisGame/index.js";
 //import CounterPage from './components/CounterPage/index'
 //import { observable } from "mobx";
-import { observer } from "mobx-react";
+//import { observer } from "mobx-react";
 import themeStore from "./stores/ThemeStore";
 import { TodoApp } from "./components/assignment-7/TodoApp";
 import { EventsApp } from "./components/Event/EventsApp";
 //import { configure } from "mobx";
 
 //configure {{enforceActions:true}}
-@observer
+//@observer
 class App extends React.Component{
   //@observable changeTheme='light'
   getCurrentTheme=()=>{
