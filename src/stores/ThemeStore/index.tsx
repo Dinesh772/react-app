@@ -5,7 +5,7 @@ class ThemeStore{
     constructor(){
         this.changeTheme='light'
     }
-    setCurrentTheme(){
+    setCurrentTheme(theme){
         if(this.changeTheme==='light'){
             this.changeTheme='dark'
         }else{

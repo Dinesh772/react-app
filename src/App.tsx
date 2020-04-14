@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+
 //import {CarList} from './components/assignment-2/index';
 //import './components/assignment-2/index.css';
 import {TodoList} from './components/todo-list/index';
@@ -15,19 +16,20 @@ import CountriesDashboardApp from './components/assignment-4/Countries-dashboard
 import CardDetails from './components/assignment-4/CountryCardDetails';   
 //import Header from './components/assignment-4/Countries-header';
 import Home from './components/home.js'
-import {EmojisGame} from "./components/assignment-5/EmojisGame/index.js";
+import { observable } from "mobx";
+import { observer } from "mobx-react";
+import {EmojisGame} from "./components/assignment-5/EmojisGame/index";
 //import CounterPage from './components/CounterPage/index'
-//import { observable } from "mobx";
-//import { observer } from "mobx-react";
 import themeStore from "./stores/ThemeStore";
 import { TodoApp } from "./components/assignment-7/TodoApp";
 import { EventsApp } from "./components/Event/EventsApp";
+import { TypeScript } from "./components/typeScript";
 //import { configure } from "mobx";
 
 //configure {{enforceActions:true}}
-//@observer
+@observer
 class App extends React.Component{
-  //@observable changeTheme='light'
+@observable changeTheme='light'
   getCurrentTheme=()=>{
     return themeStore.changeTheme
   }
@@ -66,6 +68,9 @@ class App extends React.Component{
         </Route>
         <Route path="/events-app">
         <EventsApp />
+        </Route>
+        <Route path="/typeScript">
+        <TypeScript />
         </Route>
         <Route path='/:id'>
         <CardDetails   theme={this.getCurrentTheme()} change={this.theme} />

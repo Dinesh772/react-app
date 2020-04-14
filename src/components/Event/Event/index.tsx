@@ -1,21 +1,22 @@
 import React  from 'react';
-import {EventWrapper,Input,Button,ButtonsWrapper,InputWrapper,UpdateButton} from './StyledComponent'
-//import { observable, action } from 'mobx';
+
 import { observer } from 'mobx-react';
 import { eventStore } from '../../../stores/EventStore';
+
+import {EventWrapper,Input,Button,ButtonsWrapper,InputWrapper,UpdateButton} from './StyledComponent'
 @observer
-class Event extends React.Component{
+class Event extends React.Component<{eventList:any}>{
     handleEditClick=(status,id)=>{
         console.log('status check ',status,id)
         eventStore.onEditToggled(status,id)
     }
-    handleUpdateClick=(status,id)=>{
+    handleUpdateClick=(status:any,id:Number)=>{
         eventStore.onEditToggled(status,id)
     }
-    handleDelete=(event,id)=>{
+    handleDelete=(event:any,id:Number)=>{
         eventStore.onDeleteEvent(id)
     }
-    handleEventChange=(event,id)=>{
+    handleEventChange=(event:any,id:Number)=>{
         const value=event.target.value
         eventStore.onUpdateEvent('name',id,value)
     }

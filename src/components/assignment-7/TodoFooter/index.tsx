@@ -1,6 +1,7 @@
-import React from 'react'
-import stores from '../../../stores'
-import { toJS } from 'mobx'
+import React from 'react';
+import { toJS } from 'mobx';
+import stores from '../../../stores';
+
 
 const todoList=stores.todoList
 class TodoFooter extends React.Component{

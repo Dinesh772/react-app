@@ -1,11 +1,17 @@
 /* eslint-disable array-callback-return */
 import { observable, action, toJS, computed } from "mobx";
+type eventType={
+    id:any,
+    name:any,
+    location:any,
+    edited:any,
+}
 class EventStore{
-    @observable eventList=[]
+    @observable eventList:Array<eventType>=[]
 
     @action.bound
-    onAddEvent=(eventName,location,id,isEdited)=>{
-        const event={
+    onAddEvent=(eventName:string,location:string,id:any,isEdited:any)=>{
+        const event:eventType={
             id:id,
             name:eventName,
             location:location,
@@ -15,7 +21,7 @@ class EventStore{
         console.log(this.eventList)
     }
     @action.bound
-    onDeleteEvent=(id)=>{
+    onDeleteEvent=(id:any)=>{
         const list=this.eventList
         const filteredList=list.filter(event=>{if(event.id!==id){return event}})
         this.eventList=filteredList

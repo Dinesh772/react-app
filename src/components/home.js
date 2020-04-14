@@ -26,6 +26,9 @@ export default function Home(){
             <li>
               <Link to="/events-app">Events App</Link>
             </li>
+            <li>
+              <Link to="/typeScript">TypeScript handsOn</Link>
+            </li>
           </ul>      
         </nav>
         </div>

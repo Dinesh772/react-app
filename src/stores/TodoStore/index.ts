@@ -1,18 +1,21 @@
 /* eslint-disable array-callback-return */
-//import React from 'react'
 import { observable, action, toJS,reaction } from 'mobx'
 
-
+type todoArray={
+    id:Number
+    title:string
+    isChecked:boolean
+}
 class TodoList {
-@observable List=[]
-@observable selectedFilteredList=[]
+@observable List:Array<todoArray>=[]
+@observable selectedFilteredList:Array<todoArray>=[]
 
 
 
 reaction1=reaction(()=>toJS(this.List).map(obj=>obj.id),(id)=>console.log('id===>',id))
 @action.bound
-onAddTodo=(item,id,status)=>{
-    const todo={
+onAddTodo=(item:string,id:Number,status:boolean)=>{
+    const todo:todoArray={
         id:id,
         title:item,
         isChecked:status
@@ -25,7 +28,7 @@ onAddTodo=(item,id,status)=>{
   
 }
 @action.bound
-onUpdateTodo=(value,id)=>{
+onUpdateTodo=(value:string,id:Number)=>{
     const list=toJS(this.List)
     const updatedList=list.map(todo=>{
         if(todo.id===id){
@@ -59,16 +62,15 @@ onCheckBoxChecked=(value,id)=>{
 
 
 @action.bound
-onRemoveClicked=(id)=>{
+onRemoveClicked=(id:Number)=>{
     const list=toJS(this.List)
-    // eslint-disable-next-line array-callback-return
     const updatedList=list.filter(todo=>{if(todo.id!==id){return todo}})
 
     this.List=updatedList
     this.selectedFilteredList=updatedList
 }
 @action.bound
-onFilterList=(type)=>{
+onFilterList=(type:String)=>{
     const list=toJS(this.List)
 if(type==='All'){
     this.selectedFilteredList=this.List
