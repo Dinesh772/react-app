@@ -29,6 +29,9 @@ export default function Home(){
             <li>
               <Link to="/typeScript">TypeScript handsOn</Link>
             </li>
+            <li>
+              <Link to="/grid-memory-game">Grid Memory Game</Link>
+            </li>
           </ul>      
         </nav>
         </div>

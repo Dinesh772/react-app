@@ -16,34 +16,35 @@ import CountriesDashboardApp from './components/assignment-4/Countries-dashboard
 import CardDetails from './components/assignment-4/CountryCardDetails';   
 //import Header from './components/assignment-4/Countries-header';
 import Home from './components/home.js'
-import { observable } from "mobx";
-import { observer } from "mobx-react";
+//import { observable } from "mobx";
+//import { observer } from "mobx-react";
 import {EmojisGame} from "./components/assignment-5/EmojisGame/index";
 //import CounterPage from './components/CounterPage/index'
-import themeStore from "./stores/ThemeStore";
+//import themeStore from "./stores/ThemeStore";
 import { TodoApp } from "./components/assignment-7/TodoApp";
 import { EventsApp } from "./components/Event/EventsApp";
 import { TypeScript } from "./components/typeScript";
+import { GridMemoryGame } from "./components/assignment-9/GridMemoryGame/index";
 //import { configure } from "mobx";
 
 //configure {{enforceActions:true}}
-@observer
+//@observer
 class App extends React.Component{
-@observable changeTheme='light'
-  getCurrentTheme=()=>{
-    return themeStore.changeTheme
-  }
-  setCurrentTheme=(theme)=>{
-    themeStore.setCurrentTheme(theme)
-  }
-  theme=(event)=>{
+// @observable changeTheme='light'
+//   getCurrentTheme=()=>{
+//     return themeStore.changeTheme
+//   }
+//   setCurrentTheme=(theme)=>{
+//     themeStore.setCurrentTheme(theme)
+//   }
+//   theme=(event)=>{
 
-    if(this.getCurrentTheme()==='light'){
-      this.setCurrentTheme('dark')
-    }else{
-      this.setCurrentTheme('light')
-    }
-  }
+//     if(this.getCurrentTheme()==='light'){
+//       this.setCurrentTheme('dark')
+//     }else{
+//       this.setCurrentTheme('light')
+//     }
+//   }
   render(){
   return (
     <Router>
@@ -55,7 +56,7 @@ class App extends React.Component{
         <FormComponents />
         </Route>
         <Route exact path="/countries-dashboard-app">   
-        <CountriesDashboardApp  theme={this.getCurrentTheme()} change={this.theme} />
+        <CountriesDashboardApp />
         </Route>
         <Route path="/todoList">
         <TodoList />
@@ -72,8 +73,11 @@ class App extends React.Component{
         <Route path="/typeScript">
         <TypeScript />
         </Route>
+        <Route path="/grid-memory-game">
+         <GridMemoryGame />
+        </Route>
         <Route path='/:id'>
-        <CardDetails   theme={this.getCurrentTheme()} change={this.theme} />
+        <CardDetails    />
         </Route>
 
         
