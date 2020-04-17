@@ -1,5 +1,5 @@
 import { observable } from "mobx"
-//import { gridStore } from "../../GridStore";
+
 
 export type gridModelObjectType={
     id:string
@@ -16,7 +16,5 @@ class GridModel{
         this.isCellShouldDisplay = object.isCellShouldDisplay;
         this.isSelected = object.isSelected; 
     }
-    
-    
 }
 export {GridModel}

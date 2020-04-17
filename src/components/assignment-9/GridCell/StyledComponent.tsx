@@ -1,11 +1,15 @@
-//import tw from 'tailwind.macro'
 import styled from "@emotion/styled"
-
-const CellWrapper=styled.div<{color:string}>`
+const CellWrapper=styled.button<{color:string,size:any}>`
 display:flex;
-height:100px;
-width:100px;
-margin:5px;
+height:${props=>props.size}px;
+width:${props=>props.size}px;
+margin:4px;
 background-color:${props=>props.color};
+transition:all 0.5s;
+border:none;
+:focus {
+    outline: 0 !important;
+}
+cursor:pointer;
 `
 export {CellWrapper}

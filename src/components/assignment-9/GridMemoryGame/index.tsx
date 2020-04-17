@@ -1,10 +1,12 @@
 import React from 'react';
-import {Header} from '../Header/index'
-import { gridStore } from "../../../stores/GridStore";
 import { observer } from "mobx-react";
 import { toJS } from "mobx";
+
+import { gridStore } from "../../../stores/GridStore";
 import { GridFeild } from "../GridFeild";
-import { Wrapper } from "./StyledComponent";
+import {Header} from '../Header/index'
+import WinOrLoose from "../WinOrLose/index";
+import  {Wrapper}  from "./StyledComponent";
 
 @observer
 class GridMemoryGame extends React.Component{
@@ -13,13 +15,25 @@ class GridMemoryGame extends React.Component{
         gridStore.onAddCells()
     }
     render(){
-        console.log(toJS(gridStore.gridCells))
+        const lightThemeCode:string='Light'
+        const darkThemeCode:string='Dark'
+        const themeMode:any=toJS(gridStore.theme)===lightThemeCode?lightThemeCode:darkThemeCode;
+        if(gridStore.gameStatus==='playing'){
         return(
-            <Wrapper>
+            
+            <Wrapper theme={themeMode}>
                 <Header />
                 <GridFeild />
             </Wrapper>
-        )
+        )}
+        else{
+            return(
+                <Wrapper theme={themeMode}>
+                <Header />
+                <WinOrLoose />  
+            </Wrapper>
+            )
+        }
     }
 }
 export {GridMemoryGame}
