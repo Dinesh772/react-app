@@ -10,15 +10,18 @@ class Header extends React.Component{
         gridStore.onThemeChange()
     }
     render(){
-        const topLevel=gridStore.topLevel
-        const level=gridStore.currentLevel
-        const theme=gridStore.theme
+        const topLevel=(gridStore.topLevel)
+        const level=(gridStore.currentLevel)
+        const theme=(gridStore.theme)
+        const isCellsHidden=(gridStore.isHidden)
+        const timerHideStatus=(gridStore.isHidden===true?true:false)
+        const timeLeft=(gridStore.timeLeft)
         return(
             <HeaderWrapper>
-                <TopLevel padding={gridStore.isHidden}>Top Level: {topLevel}
+                <TopLevel padding={isCellsHidden}>Top Level: {topLevel}
                 </TopLevel>
-                <Timer hide={gridStore.isHidden===true?true:false}>
-                    Time left: {gridStore.timeLeft}sec
+                <Timer hide={timerHideStatus}>
+                    Time left: {timeLeft}sec
                     </Timer>
                 <HeaderChild>
                     <Level>
