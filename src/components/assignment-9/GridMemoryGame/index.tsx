@@ -7,6 +7,7 @@ import { GridFeild } from "../GridFeild";
 import {Header} from '../Header/index'
 import WinOrLoose from "../WinOrLose/index";
 import  {Wrapper}  from "./StyledComponent";
+import Example from "../../../stores/GridGameStats";
 
 @observer
 class GridMemoryGame extends React.Component{
@@ -24,13 +25,16 @@ class GridMemoryGame extends React.Component{
             <Wrapper theme={themeMode}>
                 <Header />
                 <GridFeild />
+                
+                <Example />
             </Wrapper>
         )}
         else{
             return(
                 <Wrapper theme={themeMode}>
                 <Header />
-                <WinOrLoose />  
+                <WinOrLoose /> 
+                <Example /> 
             </Wrapper>
             )
         }

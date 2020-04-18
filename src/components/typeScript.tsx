@@ -1,6 +1,7 @@
 import React from 'react'
 import { observable } from "mobx"
 import { observer } from "mobx-react"
+import Example from "../stores/GridGameStats"
 
 @observer
 class TypeScript extends React.Component{
@@ -8,7 +9,7 @@ class TypeScript extends React.Component{
     render(){
         return(
         <div>
-           
+           <Example />
         </div>
         )
     }

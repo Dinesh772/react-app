@@ -1,6 +1,11 @@
 import { observable, toJS } from "mobx";
 import { GridModel, gridModelObjectType } from "../models/GridModel";
 
+type gridDataType={
+    name:string,  
+    Level:number, 
+    amt:number,
+}
 class GridStore{
     timer:any;
     timerCounter:any;
@@ -30,12 +35,22 @@ class GridStore{
     @observable isHidden=true;
     @observable gameStatus=this.gamePlayingStatus
     @observable timeLeft=this.initialTimeLeft
+    @observable gridStatsData:Array<gridDataType>=[]
+    @observable attemptsCount:number=0
     onThemeChange=()=>{
         if(this.theme===this.darkThemeCode){
             this.theme=this.lightThemeCode;
         }else{
             this.theme=this.darkThemeCode;
         }
+    }
+    onAddStatsData=()=>{
+        const object:gridDataType={
+            name: `Attempt ${this.attemptsCount}`,  
+            Level:this.currentLevel, 
+            amt: this.currentLevel,
+        }
+        this.gridStatsData.push(object)
     }
     onAddCells=()=>{
         for (let i=0;i<(this.cellsPerColumn*this.cellsPerColumn);++i){
@@ -116,6 +131,8 @@ class GridStore{
         }}
     }
     goToInitialLevel=()=>{
+        this.onAddStatsData()
+        this.attemptsCount=this.attemptsCount+1;
         this.timeLeft=this.initialTimeLeft;
         this.ClearGameTimer()
         this.clearTimerCounter()
@@ -123,6 +140,7 @@ class GridStore{
         this.gameStatus=this.gameLoseStatus;
     }
     goToNextLevelAndUpdateCells=()=>{
+       
         this.clearTimerCounter()
         this.ClearGameTimer()
         if(this.currentLevel<this.totalNumberOfLevels){
@@ -134,6 +152,8 @@ class GridStore{
         this.timeLeft=this.initialTimeLeft;
         this.onAddCells()}
         else{
+            this.onAddStatsData()
+            this.attemptsCount=this.attemptsCount+1;
             this.isHidden=true;
             this.gameStatus=this.gameWonStatus;
         }
