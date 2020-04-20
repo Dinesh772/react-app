@@ -4,7 +4,7 @@ import { observable, action, toJS,reaction } from 'mobx'
 type todoArray={
     id:Number
     title:string
-    isChecked:boolean
+    isCompleted:boolean
 }
 class TodoList {
 @observable List:Array<todoArray>=[]
@@ -18,14 +18,14 @@ onAddTodo=(item:string,id:Number,status:boolean)=>{
     const todo:todoArray={
         id:id,
         title:item,
-        isChecked:status
+        isCompleted:status
     }
-   
-   const list=this.List
+   const list=toJS(this.List).filter(each=>each.id!==id)
+   if(this.List.length===list.length){
    list.push(todo)
     this.List=list
     this.selectedFilteredList=this.List
-  
+   }
 }
 @action.bound
 onUpdateTodo=(value:string,id:Number)=>{
@@ -48,7 +48,7 @@ onCheckBoxChecked=(value,id)=>{
     const list=toJS(this.List)
     const updatedList=list.map(todo=>{
         if(todo.id===id){
-            todo.isChecked=value;
+            todo.isCompleted=value;
             return todo
         }else{
             return todo
@@ -75,11 +75,11 @@ onFilterList=(type:String)=>{
 if(type==='All'){
     this.selectedFilteredList=this.List
 }else if(type==='Active'){
-    const filteredList=list.filter(todo=>{if(todo.isChecked===false){return todo}})
+    const filteredList=list.filter(todo=>{if(todo.isCompleted===false){return todo}})
    
     this.selectedFilteredList=filteredList
 }else if(type==='Completed'){
-    const filteredList=list.filter(todo=>{if(todo.isChecked===true){return todo}})
+    const filteredList=list.filter(todo=>{if(todo.isCompleted===true){return todo}})
     this.selectedFilteredList=filteredList
   
 }
@@ -87,7 +87,7 @@ if(type==='All'){
 @action.bound
 clearCompletedTodos=()=>{
     const list=toJS(this.List)
-const filteredList=list.filter(todo=>{if(todo.isChecked!==true){return todo}})
+const filteredList=list.filter(todo=>{if(todo.isCompleted!==true){return todo}})
 this.List=filteredList
 this.selectedFilteredList=filteredList
 }

@@ -23,8 +23,8 @@ class Todo extends React.Component<{list:any}>{
             
         <div key={todo.id} className={`flex justify-between text-2xl w-full p-1`}>
         <div className={`w-full`}>
-        <input type="checkbox"  className={`h-5 w-5 rounded-full bg-blue rounded `} checked={todo.isChecked} onClick={(event)=>this.handleCheckBox(todo.isChecked,todo.id)}/>
-        <input type="text" key={todo.id} className={` ${todo.isChecked===true?`line-through text-teal-300 select-none `:`no-underline text-black`}  ml-1 w-11/12`} disabled={todo.isChecked}  defaultValue={todo.title} onChange={(event)=>this.handleChange(event,todo.id)} />
+        <input type="checkbox"  className={`h-5 w-5 rounded-full bg-blue rounded `} checked={todo.isCompleted} onClick={(event)=>this.handleCheckBox(todo.isCompleted,todo.id)}/>
+        <input type="text" key={todo.id} className={` ${todo.isCompleted===true?`line-through text-teal-300 select-none bg-white `:`no-underline text-black`}  ml-1 w-11/12  `} disabled={todo.isCompleted}  defaultValue={todo.title} onChange={(event)=>this.handleChange(event,todo.id)} />
         </div>
         <button onClick={()=>this.handleDeleteBtn(todo.id)}>&times;</button>
         </div>
@@ -35,5 +35,5 @@ class Todo extends React.Component<{list:any}>{
             </div>
         )
     }
-}
+} 
 export {Todo}

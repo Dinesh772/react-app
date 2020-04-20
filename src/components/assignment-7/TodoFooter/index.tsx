@@ -18,7 +18,7 @@ class TodoFooter extends React.Component{
         todoList.clearCompletedTodos()
     }
     render(){
-        const list=toJS(todoList.List).filter(todo=>todo.isChecked===false)
+        const list=toJS(todoList.List).filter(todo=>todo.isCompleted===false)
         const count=list.length
         
         if(toJS(todoList.List.length)!==0){
