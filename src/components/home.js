@@ -32,6 +32,9 @@ export default function Home(){
             <li>
               <Link to="/grid-memory-game">Grid Memory Game</Link>
             </li>
+            <li>
+              <Link to="/user-data">Users Data</Link>
+            </li>
           </ul>      
         </nav>
         </div>

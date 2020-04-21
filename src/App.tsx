@@ -25,6 +25,7 @@ import { TodoApp } from "./components/assignment-7/TodoApp";
 import { EventsApp } from "./components/Event/EventsApp";
 import { TypeScript } from "./components/typeScript";
 import { GridMemoryGame } from "./components/assignment-9/GridMemoryGame/index";
+import UsersPage from "./components/UsersPage";
 //import { configure } from "mobx";
 
 //configure {{enforceActions:true}}
@@ -75,6 +76,9 @@ class App extends React.Component{
         </Route>
         <Route path="/grid-memory-game">
          <GridMemoryGame />
+        </Route>
+        <Route path="/user-data">
+        <UsersPage />
         </Route>
         <Route path='/:id'>
         <CardDetails    />
