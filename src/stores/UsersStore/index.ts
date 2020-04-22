@@ -1,16 +1,18 @@
 import { observable, action } from "mobx"
 import { API_INITIAL } from "@ib/api-constants"
 import {bindPromiseWithOnSuccess} from '@ib/mobx-promise'
-import { create } from "apisauce"
-import { networkCallWithApisauce } from "../../utils/APIUtils"
-import { apiMethods } from "../../constants/APIConstants"
+//import UserService from "../../services/UserService/index.api"
+//import UserFixtureService from "../../services/UserService/index.fixture"
+
 
 class UserStore{
     @observable getUsersApiStatus
     @observable getUsersApiError
     @observable users
-
-    constructor(){
+    userService
+    
+    constructor(userService){
+        this.userService=userService
         this.init()
     }
 
@@ -29,16 +31,17 @@ class UserStore{
     }
     @action.bound
     getUsersAPI(){
-        const api=create({
-            baseURL:'https://jsonplaceholder.typicode.com/'
+        // const api=create({
+        //     baseURL:'https://jsonplaceholder.typicode.com/'
             
-        })
-        const usersPromise=networkCallWithApisauce(
-            api,
-            'users/',
-            {},
-            apiMethods.get
-        )
+        // })
+        // const usersPromise=networkCallWithApisauce(
+        //     api,
+        //     'users/',
+        //     {},
+        //     apiMethods.get
+        // )
+        const usersPromise=this.userService.getUsersAPI()
         return bindPromiseWithOnSuccess(usersPromise)
         .to(this.setUsersAPIStatus,this.setUsersResponse)
         .catch(this.getUsersApiError)
@@ -56,5 +59,6 @@ class UserStore{
     }
 }
 
-const userStore=new UserStore()
-export default userStore
+//const userService=new UserService()
+
+export default UserStore

@@ -1,5 +1,4 @@
 import React from 'react'
-import { observer } from 'mobx-react'
 
 import {
   FailureViewContainer,
@@ -7,7 +6,6 @@ import {
   RetryButton,
 } from './styledComponents'
 
-@observer
 class FailureView extends React.Component {
   render() {
     const { onRetryClick, errorMessage } = this.props

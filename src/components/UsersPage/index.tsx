@@ -1,10 +1,12 @@
 import React from 'react'
 import { observer } from "mobx-react";
 
-import userStore from "../../stores/UsersStore";
+//import userStore from "../../stores/UsersStore";
 import LoadingWrapperWithFailure from "../common/LoadingWrapperWithFailure";
 import NoDataView from "../common/NoDataView";
+import stores from "../../stores";
 
+const userStore=stores.userStore
 
 @observer
 class UsersPage extends React.Component{

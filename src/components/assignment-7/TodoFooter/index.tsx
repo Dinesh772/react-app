@@ -1,9 +1,10 @@
 import React from 'react';
 import { toJS } from 'mobx';
 import stores from '../../../stores';
-
+import { observer } from "mobx-react";
 
 const todoList=stores.todoList
+@observer
 class TodoFooter extends React.Component{
     handleAllButton=()=>{
         todoList.onFilterList('All')
@@ -18,7 +19,7 @@ class TodoFooter extends React.Component{
         todoList.clearCompletedTodos()
     }
     render(){
-        const list=toJS(todoList.List).filter(todo=>todo.isCompleted===false)
+        const list=toJS(todoList.List).filter(todo=>todo.completed===false)
         const count=list.length
         
         if(toJS(todoList.List.length)!==0){
