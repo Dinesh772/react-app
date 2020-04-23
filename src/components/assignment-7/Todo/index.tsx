@@ -7,17 +7,6 @@ const todoList=stores.todoList
 
 @observer
 class Todo extends React.Component<{list:any}>{
-    handleChange=(event:any,id:Number,todo:any)=>{
-        //const value=event.currentTarget.value
-            //todoList.onUpdateTodo(value,id)
-            
-        
-    }
-    handleCheckBox=(value:any,id:Number,todo:any)=>{
-        // todo.onCompleted
-        //console.log(todo.onCompleted)
-        //todoList.onCheckBoxChecked(!value,id)
-    }
     handleDeleteBtn=(id:Number)=>{
        todoList.onRemoveClicked(id)
     }
