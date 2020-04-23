@@ -20,6 +20,7 @@
     "babel-plugin-macros": "^2.8.0",
     "combinations": "^1.0.0",
     "emotion": "^10.0.27",
+    "js-cookie": "2.2.1",
     "mobx": "5.15.0",
     "mobx-logger": "^0.7.1",
     "mobx-react": "6.1.4",
