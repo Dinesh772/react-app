@@ -23,7 +23,7 @@ import {EmojisGame} from "./components/assignment-5/EmojisGame/index";
 //import themeStore from "./stores/ThemeStore";
 import { TodoApp } from "./components/assignment-7/TodoApp";
 import { EventsApp } from "./components/Event/EventsApp";
-import { TypeScript } from "./components/typeScript";
+import  TypeScript  from "./components/typeScript";
 import { GridMemoryGame } from "./components/assignment-9/GridMemoryGame/index";
 import UsersPage from "./components/UsersPage";
 

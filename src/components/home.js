@@ -1,6 +1,22 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-export default function Home(){
+import {Link,Redirect} from 'react-router-dom';
+import { getAccessToken } from "../utils/StorageUtils";
+
+
+class  Home extends React.Component{
+  gotoGridScreenIfLoggedIn=()=>{
+    return(
+      <Redirect to = {{
+        pathname: '/grid-memory-game',
+      }} />
+    
+    )
+  }
+  render(){
+    if(getAccessToken()){
+      alert(getAccessToken())
+      return this.gotoGridScreenIfLoggedIn()
+    }
     return(
         <div>
         <nav>
@@ -38,6 +54,8 @@ export default function Home(){
           </ul>      
         </nav>
         </div>
-        )
+        );
 }
+}
+export default Home
 //events-app
