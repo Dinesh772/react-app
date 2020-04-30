@@ -5,6 +5,7 @@ import { observer } from "mobx-react";
 import LoadingWrapperWithFailure from "../common/LoadingWrapperWithFailure";
 import NoDataView from "../common/NoDataView";
 import stores from "../../stores";
+//import { observable, action,reaction,autorun } from "mobx";
 
 const userStore=stores.userStore
 
@@ -26,7 +27,7 @@ class UsersPage extends React.Component{
         return users.map(userName=><div key={Math.random()}>{userName}</div>)
     }
     render(){
-        const{getUsersApiStatus, getUsersApiError}=userStore
+        const{ getUsersApiStatus, getUsersApiError }=userStore
         return(
             <LoadingWrapperWithFailure 
             apiStatus={getUsersApiStatus}
